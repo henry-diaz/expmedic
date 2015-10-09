@@ -1,0 +1,3 @@
+- table_headers.each do |field|
+  %th{ data: { attribute: field } }
+    = t "activerecord.attributes.#{model.to_s.underscore}.#{field}"

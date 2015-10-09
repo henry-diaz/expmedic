@@ -1,0 +1,44 @@
+.form-group
+  = f.label :clinic_id, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.collection_select(:clinic_id, Clinic.accessible_by(current_ability).order(:name), :id, :name, {}, {class: 'form-control'})
+.form-group
+  = f.label :patient_id, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.collection_select(:patient_id, Patient.accessible_by(current_ability).order(:lastname), :id, :fullname, {prompt: '- Seleccione -'}, {class: 'form-control', required: true})
+.form-group
+  = f.label :weight, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :weight, class: 'form-control'
+    %i.help_block
+      Kg
+.form-group
+  = f.label :size, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :size, class: 'form-control'
+    %i.help_block
+      cm
+.form-group
+  = f.label :pathological, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :pathological, row: 3, class: 'form-control'
+.form-group
+  = f.label :nonpathological, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :nonpathological, row: 3, class: 'form-control'
+.form-group
+  = f.label :family, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :family, row: 3, class: 'form-control'
+.form-group
+  = f.label :surgical, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :surgical, row: 3, class: 'form-control'
+.form-group
+  = f.label :allergies, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :allergies, row: 3, class: 'form-control'
+.form-group
+  = f.label :medicines, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :medicines, row: 3, class: 'form-control'

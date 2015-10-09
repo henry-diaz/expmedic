@@ -1,0 +1,40 @@
+.row
+  .col-sx-12.col-sm-12.col-md-12.col-lg-12
+    .panel.panel-warning.clearfix
+      .panel-heading.clearfix
+        %i.icon-list-alt
+        %h3.panel-title
+          = t("activerecord.models.#{model.to_s.underscore}").pluralize(I18n.locale)
+          - if current_admin.try(:role) == 'manager' and controller_name == 'admins'
+            %small
+              = "Tiene #{current_admin.clinic.try(:total_accounts)} cuenta(s) registrada(s) de un máximo de #{current_admin.clinic.try(:accounts)}."
+        - if model.respond_to?(:to_csv)
+          = link_to csv_url, class: 'pull-right' do
+            %i.icon.icon-download
+            = t '.download'
+      .panel-body
+        .table-responsive
+          #table-list.clearfix
+            %table.table.table-hover.table-striped.data-table
+              %thead
+                %tr
+                  = render partial: 'table_header'
+
+%script#buttonstpl{ type: "text/x-handlebars-template" }
+  .record-actions
+
+    - if can? :update, model
+      = link_to URI.decode(edit_item_url('{{id}}')), class: 'btn btn-info btn-sm' do
+        = t '.edit'
+
+    - elsif can? :read, model
+      = link_to URI.decode(item_url('{{id}}')), class: 'btn btn-info btn-sm' do
+        = t '.show'
+
+    - if controller.respond_to?(:unban) && can?(:unban, model)
+      = link_to URI.decode(unban_item_url('{{id}}')), class: 'btn btn-success btn-sm', data: { confirm: t('.confirm_unban') } do
+        = t '.unban'
+
+    - if can? :delete, model
+      = link_to URI.decode(item_url('{{id}}')), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: t('.confirm_delete') } do
+        = t '.delete'

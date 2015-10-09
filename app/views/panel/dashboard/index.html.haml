@@ -1,0 +1,183 @@
+.row.page-title
+  .col-lg-9.col-md-8.col-sm-9.col-xs-12
+    %h2
+      Inicio
+.row
+  .col-lg-4.col-md-4.col-sm-12.col-xs-12
+    = link_to panel_patients_url, class: 'info-tiles tiles-secondary' do
+      .tiles-heading
+        .pull-left
+          Pacientes registrados
+      .tiles-body
+        .pull-left.animated.bounceIn
+          %i.icon-list-alt
+        .pull-right.number
+          %span#patients-x 0
+      .tiles-footer
+        Ver más
+
+:javascript
+  $(function(){
+    // Completed users
+    var incrementJ = $('#patients-x').text();
+    $({numberValue: incrementJ}).animate({
+      numberValue: #{@patients_count}
+    },{
+      duration: 2500,
+      easing: 'linear',
+      step: function () {
+        $('#patients-x').text(Math.ceil(this.numberValue));
+      },
+      done: function () {
+        $('#patients-x').text(Math.ceil(this.numberValue));
+      }
+    });
+  });
+
+-#
+  .row
+    .col-lg-4.col-md-4.col-sm-12.col-xs-12
+      = link_to admin_users_url, class: 'info-tiles tiles-secondary' do
+        .tiles-heading
+          .pull-left
+            Usuarios registrados
+        .tiles-body
+          .pull-left.animated.bounceIn
+            %i.icon-list-alt
+          .pull-right.number
+            %span#users-completed-x 0
+        .tiles-footer
+          Ver más
+    .col-lg-4.col-md-4.col-sm-12.col-xs-12
+      = link_to admin_uncompleted_users_url, class: 'info-tiles tiles-secondary' do
+        .tiles-heading
+          .pull-left
+            Usuarios sin registro completo
+        .tiles-body
+          .pull-left.animated.bounceIn
+            %i.icon-list-alt
+          .pull-right.number
+            %span#users-uncompleted-x 0
+        .tiles-footer
+          %span.pull-left
+            Ver más
+    .col-lg-4.col-md-4.col-sm-12.col-xs-12
+      = link_to admin_banned_users_url, class: 'info-tiles tiles-secondary' do
+        .tiles-heading
+          .pull-left
+            Usuarios bloqueados
+        .tiles-body
+          .pull-left.animated.bounceIn
+            %i.icon-list-alt
+          .pull-right.number
+            %span#users-banned-x 0
+        .tiles-footer
+          Ver más
+
+  .row
+    .col-lg-4.col-md-4.col-sm-12.col-xs-12
+      = link_to admin_tokens_url, class: 'info-tiles tiles-secondary' do
+        .tiles-heading
+          .pull-left
+            Tokens usados
+        .tiles-body
+          .pull-left.animated.bounceIn
+            %i.icon-list-alt
+          .pull-right.number
+            %span#used-tokens-x 0
+        .tiles-footer
+          Ver más
+
+    .col-lg-4.col-md-4.col-sm-12.col-xs-12
+      = link_to admin_winners_url, class: 'info-tiles tiles-secondary' do
+        .tiles-heading
+          .pull-left
+            Ganadores registrados
+        .tiles-body
+          .pull-left.animated.bounceIn
+            %i.icon-list-alt
+          .pull-right.number
+            %span#winners-x 0
+        .tiles-footer
+          Ver más
+
+
+
+-#
+  :javascript
+    $(function(){
+      // Completed users
+      var incrementJ = $('#users-completed-x').text();
+      $({numberValue: incrementJ}).animate({
+        numberValue: #{@users_count}
+      },{
+        duration: 1500,
+        easing: 'linear',
+        step: function () {
+          $('#users-completed-x').text(Math.ceil(this.numberValue));
+        },
+        done: function () {
+          $('#users-completed-x').text(Math.ceil(this.numberValue));
+        }
+      });
+
+      // Uncompleted users
+      var incrementJ = $('#users-uncompleted-x').text();
+      $({numberValue: incrementJ}).animate({
+        numberValue: #{@uncompleted_users_count}
+      },{
+        duration: 1500,
+        easing: 'linear',
+        step: function () {
+          $('#users-uncompleted-x').text(Math.ceil(this.numberValue));
+        },
+        done: function () {
+          $('#users-uncompleted-x').text(Math.ceil(this.numberValue));
+        }
+      });
+
+      // Banned users
+      var incrementJ = $('#users-banned-x').text();
+      $({numberValue: incrementJ}).animate({
+        numberValue: #{@banned_users_count}
+      },{
+        duration: 1500,
+        easing: 'linear',
+        step: function () {
+          $('#users-banned-x').text(Math.ceil(this.numberValue));
+        },
+        done: function () {
+          $('#users-banned-x').text(Math.ceil(this.numberValue));
+        }
+      });
+
+      // Banned users
+      var incrementJ = $('#used-tokens-x').text();
+      $({numberValue: incrementJ}).animate({
+        numberValue: #{@used_tokens}
+      },{
+        duration: 1500,
+        easing: 'linear',
+        step: function () {
+          $('#used-tokens-x').text(Math.ceil(this.numberValue));
+        },
+        done: function () {
+          $('#used-tokens-x').text(Math.ceil(this.numberValue));
+        }
+      });
+
+      // Winners
+      var incrementJ = $('#winners-x').text();
+      $({numberValue: incrementJ}).animate({
+        numberValue: #{@winners_count}
+      },{
+        duration: 1700,
+        easing: 'linear',
+        step: function () {
+          $('#winners-x').text(Math.ceil(this.numberValue));
+        },
+        done: function () {
+          $('#winners-x').text(Math.ceil(this.numberValue));
+        }
+      });
+    });

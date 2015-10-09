@@ -1,0 +1,53 @@
+.form-group
+  = f.label :name, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :name, class: 'form-control', required: true
+    %i.help_block
+      Requerido
+
+.form-group
+  = f.label :acronym, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :acronym, class: 'form-control', required: true
+    %i.help_block
+      Requerido, ingrese un acrónimo sin espacios en blanco
+
+.form-group
+  = f.label :logo, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.file_field :logo, 'data-preview' => true
+    = image_tag(@item.logo.present? ? @item.logo.url(:thumb) : 'panel/missing.png')
+    %i.help_block
+      Tamaño óptimo: 300x300
+
+.form-group
+  = f.label :address, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :address, rows: 4, class: 'form-control'
+
+.form-group
+  = f.label :contact, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :contact, class: 'form-control'
+
+.form-group
+  = f.label :phone, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :phone, class: 'form-control tokenize'
+    %i.help_block
+      Presione [enter] o [coma] para agregar
+
+.form-group
+  = f.label :email, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :email, class: 'form-control tokenize'
+    %i.help_block
+      Requerido, presione [enter] o [coma] para agregar
+
+- if can? :manage, :all
+  .form-group
+    = f.label :accounts, class: 'control-label col-xs-3'
+    .col-xs-7
+      = f.text_field :accounts, class: 'form-control'
+      %i.help_block
+        Requerido, número entero mayor que cero

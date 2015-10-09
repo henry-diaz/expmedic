@@ -1,0 +1,39 @@
+:ruby
+  menus = [
+    { controller: :dashboard },
+    { module: :clinics, controllers: [:clinics, :admins, :patients, :histories] },
+    { module: :tools, controllers: [:settings, :reports] },
+  ]
+
+%aside#sidebar
+  %br
+  #menu
+    %ul
+      - menus.each do |menu|
+        - if menu.has_key? :module
+          - highlight = menu[:controllers].include? controller.controller_name.to_sym
+          %li.has-sub{ class: highlight ? 'highlight active' : nil }
+            = link_to '#' do
+              %i.icon-list-alt
+              %span
+                = t ".#{menu[:module]}"
+              - if highlight
+                %em.arrow-active
+              - else
+                %em.arrow
+            - if menu.has_key?(:controllers) && menu[:controllers].any?
+              %ul{ style: (highlight ? 'display: block' : nil) }
+                - menu[:controllers].each do |control|
+                  %li
+                    = link_to url_for(controller: control, action: :index), class: (controller.controller_name.to_sym == control ? 'current' : nil)  do
+                      %i.icon-double-angle-right
+                      %span
+                        = t("activerecord.models.#{control.to_s.singularize}").pluralize(I18n.locale)
+        - elsif menu.has_key? :controller
+          - highlight = menu[:controller] == controller.controller_name.to_sym
+          %li{ class: highlight ? 'highlight active' : nil }
+            = link_to url_for(controller: menu[:controller], action: :index) do
+              %i.icon-list-alt
+              = t("activerecord.models.#{menu[:controller].to_s.singularize}").pluralize(I18n.locale)
+              - if highlight
+                %em.arrow-active

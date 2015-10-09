@@ -1,0 +1,38 @@
+.row-fluid
+  .col-xs-11.col-sm-11.col-md-11.col-lg-10.col-lg-offset-1
+    .panel.panel-warning
+      .panel-heading.clearfix
+        %i.icon-file-text
+        %h3.panel-title
+          = t("activerecord.models.#{model.to_s.underscore}")
+      .panel-sub-heading
+        %a
+          = t '.info'
+      .panel-body.show
+        = render partial: 'info'
+
+  .col-xs-1.col-sm-1.col-md-1.col-lg-1
+    - if can? :update, model
+      = link_to edit_item_url(@item), class: 'btn btn-info' do
+        %i.icon-pencil
+
+      %br
+      %br
+
+    - if can? :delete, model
+      = link_to item_url(@item), class: 'btn btn-danger', method: :delete, data: { confirm: t('.confirm_delete') } do
+        %i.icon-trash
+
+      %br
+      %br
+
+    - if controller.respond_to?(:ban) && can?(:ban, @item) && @item.respond_to?(:banned) && !@item.banned?
+      = link_to ban_item_url(@item), class: 'btn btn-warning btn-sm', data: { confirm: t('.confirm_ban') } do
+        %i.icon-lock
+
+      %br
+      %br
+
+    - if controller.respond_to?(:unban) && can?(:unban, @item)
+      = link_to unban_item_url(@item), class: 'btn btn-success btn-sm', data: { confirm: t('.confirm_unban') } do
+        %i.icon-unlock

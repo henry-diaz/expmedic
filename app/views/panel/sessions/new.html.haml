@@ -1,0 +1,23 @@
+- if flash[:notice]
+  .alert.alert-success
+    = flash[:notice]
+.login-container
+  .flat-form
+    %ul.tabs
+      %li
+        = link_to '#login', class: 'active' do
+          Ingresar
+
+    #login.form-action.show.animated.bounceInDown
+      %h1
+        Ingresar
+      %p
+        Bienvenid@ al panel de control del sistema ExpMedic. Por favor digite sus datos para ingresar.
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %ul
+          %li
+            = f.text_field :login, placeholder: 'Usuario', autofocus: true
+          %li
+            = f.password_field :password, autocomplete: 'off', placeholder: 'Contraseña'
+
+        = f.submit 'Ingresar', class: 'button'

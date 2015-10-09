@@ -1,0 +1,27 @@
+.row
+  .col-xs-11.col-sm-11.col-md-11.col-lg-10.col-lg-offset-1
+    .panel.panel-warning
+      .panel-heading.clearfix
+        %i.icon-file-text
+        %h3.panel-title
+          = t("activerecord.models.#{model.to_s.underscore}")
+      .panel-sub-heading
+        %a
+          = t '.edit_info'
+      .panel-body
+        = nested_form_for [namespace, @item], html: { id: 'item-form', class: 'form-horizontal' } do |f|
+          = render partial: 'form', locals: { f: f }
+
+          - if can? :update, @item
+            .text-center
+              = f.submit t('.save'), class: 'btn btn-success btn-lg'
+
+  .col-xs-1.col-sm-1.col-md-1.col-lg-1
+
+    - if can? :delete, @item
+      = link_to item_url(@item), class: 'btn btn-danger', method: :delete, data: { confirm: t('.confirm_delete') } do
+        %i.icon-trash
+
+- if !can? :update, @item
+  :javascript
+    $("#item-form :input").attr("disabled", true)

@@ -1,0 +1,87 @@
+.form-group
+  = f.label :photo, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.file_field :photo, 'data-preview' => true
+    = image_tag(@item.photo.present? ? @item.photo.url(:thumb) : 'panel/missing.png')
+    %i.help_block
+      Tamaño óptimo: 300x300
+.form-group
+  = f.label :clinic_id, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.collection_select(:clinic_id, Clinic.accessible_by(current_ability).order(:name), :id, :name, {}, {class: 'form-control'})
+.form-group
+  = f.label :code, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :code, class: 'form-control'
+.form-group
+  = f.label :firstname, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :firstname, class: 'form-control', required: true
+    %i.help_block
+      Requerido
+.form-group
+  = f.label :lastname, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :lastname, class: 'form-control', required: true
+    %i.help_block
+      Requerido
+.form-group
+  = f.label :gender, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.select :gender, options_for_select(Patient::GENDER.invert), { prompt: '- Seleccione -' }, class: 'form-control'
+    %i.help_block
+      Requerido
+.form-group
+  = f.label :birthdate, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.date_field :birthdate, class: 'form-control', required: true
+    %i.help_block
+      Requerido. Formato "dd/mm/aaaa"
+.form-group
+  = f.label :responsible, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :responsible, class: 'form-control'
+    %i.help_block
+      Requerido solo si es menor de edad
+%hr
+.form-group
+  = f.label :email, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :email, class: 'form-control'
+.form-group
+  = f.label :phone, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :phone, class: 'form-control'
+.form-group
+  = f.label :work_phone, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :work_phone, class: 'form-control'
+.form-group
+  = f.label :cellular, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :cellular, class: 'form-control'
+.form-group
+  = f.label :fax, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :fax, class: 'form-control'
+.form-group
+  = f.label :address, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :address, row: 4, class: 'form-control'
+%hr
+.form-group
+  = f.label :civil_status, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :civil_status, class: 'form-control'
+.form-group
+  = f.label :occupation, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :occupation, class: 'form-control'
+.form-group
+  = f.label :education_level, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :education_level, class: 'form-control'
+.form-group
+  = f.label :observations, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_area :observations, row: 4, class: 'form-control'

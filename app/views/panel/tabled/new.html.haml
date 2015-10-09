@@ -1,0 +1,17 @@
+.row
+  .col-xs-12.col-sm-12.col-md-12.col-lg-10.col-lg-offset-1
+    .panel.panel-warning
+      .panel-heading.clearfix
+        %i.icon-file-text
+        %h3.panel-title
+          = t("activerecord.models.#{model.to_s.underscore}")
+      .panel-sub-heading
+        %a
+          = t '.complete_info'
+      .panel-body
+        = nested_form_for [namespace, @item], html: { class: 'form-horizontal' } do |f|
+          = render partial: 'form', locals: { f: f }
+
+          - if can? :create, @item
+            .text-center
+              = f.submit t('.save'), class: 'btn btn-success btn-lg'

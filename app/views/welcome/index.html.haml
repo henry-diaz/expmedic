@@ -1,0 +1,768 @@
+/ Page Preloader
+.page-mask
+  .page-loader
+    .spinner
+/ /Page Preloader
+/ Warpper
+.wrap.with-logo
+  / Image Background Parallax
+  #section.image-parallax{:style => "background-image: url('#{asset_url('slider/bg-stock.jpg')}')"}
+    .bg-overlay
+      .slide-content.light
+        .align-center
+          / Top Logo
+          .top-logo
+            .scrollNormal
+              %a{:href => "#section2"}
+                = image_tag('logo_welcome.png', alt: 'Agency', width: 140, height: 140)
+            .scrollDown
+              %a{:href => "#section2"}
+                = image_tag('logo2_welcome.png', alt: 'Agency', width: 140, height: 140)
+          / /Top Logo
+          %ul.text-slide
+            %li
+              Bienvenido a
+              %span.text-color ExpMedic
+            %li
+              Ven y
+              %span.text-color con&oacute;cenos
+            %li
+              Tu tienes el
+              %span.text-color
+                control
+          %a.btn.btn-1.img-btn{:href => "#section2"} Aprender m&aacute;s
+  / /Image Background Parallax
+  / Header
+  %header#section1.parallax-slider
+    / Navigation
+    #navigation
+      %nav.navbar.navbar-custom.cl-effect-21{:role => "navigation"}
+        .container
+          .row
+            .col-md-2.mob-logo
+              .row
+                .site-logo
+                  %a{:href => "/"}
+                    = image_tag('logo.png', alt: 'Agency')
+            .col-md-10.mob-menu
+              .row
+                / Brand and toggle get grouped for better mobile display
+                .navbar-header
+                  %button.navbar-toggle{"data-target" => "#menu", "data-toggle" => "collapse", :type => "button"}
+                    %i.fa.fa-bars
+                / Collect the nav links, forms, and other content for toggling
+                #menu.collapse.navbar-collapse
+                  %ul.nav.navbar-nav.navbar-right
+                    %li.active
+                      %a{:href => "#section1"} Inicio
+                    %li
+                      %a{:href => "#section2"} Acerca de nosotros
+                    /
+                      %li
+                        %a{:href => "#section3"} Portafolio
+                    %li
+                      %a{:href => "#section4"} Servicios
+                    %li
+                      %a{:href => "#section5"} Clientes
+                    %li
+                      %a{:href => "#section6"} Precios
+                    /
+                      %li.dropdown.nav-toggle
+                        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                          Blog
+                          %b.caret
+                        %ul.dropdown-menu
+                          %li
+                            %a.external{:href => "blog.html"} Blog
+                          %li
+                            %a.external{:href => "blog-big.html"} Blog Large
+                          %li
+                            %a.external{:href => "single-post.html"} Single Page
+                    %li
+                      %a{:href => "#section7"} Cont&aacute;ctanos
+                / /.Navbar-collapse
+        / /.container
+    / /Navigation
+  / /Header
+  / Section 2
+  %section#section2.about
+    .container
+      / Title row
+      .row
+        .col-md-12.big-title.wow.bounceIn
+          %h2 Acerca de nosotros
+        .clearfix
+        .col-md-12.sub-title.text-center.wow.slideInRight
+          %h3 &iquest;Todav&iacute;a usas papeles para llevar el control de tu cl&iacute;nica? &iexcl;Que esperas para unirte a la nueva era tecnol&oacute;gica!
+      / /Title row
+      .row
+        .col-md-12
+          = image_tag('imac-device.png', alt: 'Acerca de nosotros', class: 'img-responsive')
+    / Service wrap
+    .about-wrap
+      .parallax-layer
+        .icons
+      .parallax-layer
+        .texture
+      .container
+        / Content row
+        .row
+          / Content box 1
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12
+            .content-box.big.ch-item.wow.fadeInLeft
+              .ch-info-wrap
+                .ch-info
+                  .ch-info-front.ch-img-1
+                    %i.fa.fa-arrows-alt
+              .content-box-info
+                %h4 Trabajo profesional
+                %p
+                  Desarrollado por y para profesionales m&eacute;dicos, &iexcl;con tecnolog&iacute;a de vanguardia!
+          / /Content box 1
+          / Content box 2
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12
+            .content-box.big.ch-item.wow.fadeInDown
+              .ch-info-wrap
+                .ch-info
+                  .ch-info-front.ch-img-1
+                    %i.fa.fa-eye
+              .content-box-info
+                %h4 Dise&ntilde;o &uacute;nico
+                %p
+                  &iexcl;Limpio, simple y f&aacute;cil de usar!
+          / /Content box 2
+          / Content box 3
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12
+            .content-box.big.ch-item.wow.fadeInRight
+              .ch-info-wrap
+                .ch-info
+                  .ch-info-front.ch-img-1
+                    %i.fa.fa-rocket
+              .content-box-info
+                %h4 Excelente Soporte
+                %p
+                  Llamenos o escribanos, para nosotros siempre es un gusto atenderlo.
+          / /Content box 3
+        / /Content row
+    / /Service wrap
+    / What we do best
+    -#
+      .skills-wrap
+        .container
+          / Title row
+          .row
+            .col-md-12.big-title.wow.bounceIn
+              %h2 Lo que hacemos mejor
+            .clearfix
+            .col-md-12.sub-title.text-center.wow.slideInRight
+              %h3 It is not enough that we do our best; sometimes we must do what is required!
+          / /Title row
+          / Expertise progress bars
+          .skills
+            %ul.col-md-6.col-sm-12.col-xs-12.wow.fadeInLeft
+              %li.progress
+                .progress-bar{"data-width" => "85"}
+                  Wordpress 85%
+              %li.progress
+                .progress-bar{"data-width" => "65"}
+                  Graphic Design 65%
+              %li.progress
+                .progress-bar{"data-width" => "90"}
+                  HTML/CSS Design 90%
+              %li.progress
+                .progress-bar{"data-width" => "60"}
+                  SEO 60%
+            %ul.col-md-6.col-sm-12.col-xs-12.wow.fadeInRight
+              %li.progress
+                .progress-bar{"data-width" => "75"}
+                  Agencying 75%
+              %li.progress
+                .progress-bar{"data-width" => "95"}
+                  App Development 95%
+              %li.progress
+                .progress-bar{"data-width" => "70"}
+                  IT Consultency 70%
+              %li.progress
+                .progress-bar{"data-width" => "90"}
+                  Theme Development 90%
+        / /Expertise progress bars
+    / /What we do best
+    / Quote of the day
+    .quote-wrap.light.image-parallax
+      .texture-layer
+        .container
+          %h2
+            %i.fa.fa-quote-left.wow.fadeInLeft
+            %span.wow.bounceIn
+              Expediente cl&iacute;nico es el conjunto &uacute;nico de informaci&oacute;n y datos personales de un paciente
+            %i.fa.fa-quote-right.wow{"data-animate" => "fadeInRight"}
+          / %p.animated.wow{"data-animate" => "fadeInUp"} - Charles Eames -
+    / /Quote of the day
+    / Agency team
+    .team-wrap
+      .container
+        / Title row
+        .row
+          .col-md-12.big-title.wow.bounceIn
+            %h2 &iquest;Qu&eacute; es ExpMedic?
+          .clearfix
+          .col-md-12.sub-title.text-center.wow.slideInRight
+            %h3 Es un conjunto de herramientas web que permiten llevar el control de los expedientes cl&iacute;nicos de los pacientes.
+        / /Title row
+        / Team members row 1
+        -#
+          .row
+            / item 1
+            .col-lg-3.col-md-3.col-sm-6.col-xs-12.item.wow.fadeInLeft
+              .team-member
+                .team-member-holder
+                  .team-member-image
+                    = image_tag('team/team-member-1.jpg')
+                    .team-member-links
+                      .team-member-links-list
+                        %a.facebook.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-facebook
+                        %a.twitter.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-twitter
+                        %a.linkedin.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-linkedin
+                        %p
+                          Lorem ipsum dolor sit amet, quis adipiscing elit.
+                  .team-member-meta
+                    %h4.team-member-name Monzurul Haque
+                    .team-member-role
+                      CEO
+            / End
+            / item 2
+            .col-lg-3.col-md-3.col-sm-6.col-xs-12.item.wow.fadeInDown
+              .team-member
+                .team-member-holder
+                  .team-member-image
+                    = image_tag('team/team-member-2.jpg')
+                    .team-member-links
+                      .team-member-links-list
+                        %a.facebook.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-facebook
+                        %a.twitter.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-twitter
+                        %a.linkedin.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-linkedin
+                        %p
+                          Lorem ipsum dolor sit amet, quis adipiscing elit.
+                  .team-member-meta
+                    %h4.team-member-name Jessica Alba
+                    .team-member-role
+                      CMO
+            / End
+            / item 3
+            .col-lg-3.col-md-3.col-sm-6.col-xs-12.item.wow.fadeInDown
+              .team-member
+                .team-member-holder
+                  .team-member-image
+                    = image_tag('team/team-member-3.jpg')
+                    .team-member-links
+                      .team-member-links-list
+                        %a.facebook.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-facebook
+                        %a.twitter.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-twitter
+                        %a.linkedin.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-linkedin
+                        %p
+                          Lorem ipsum dolor sit amet, quis adipiscing elit.
+                  .team-member-meta
+                    %h4.team-member-name Emma Watson
+                    .team-member-role
+                      CFO
+            / End
+            / item 4
+            .col-lg-3.col-md-3.col-sm-6.col-xs-12.item.wow.fadeInRight
+              .team-member
+                .team-member-holder
+                  .team-member-image
+                    = image_tag('team/team-member-4.jpg')
+                    .team-member-links
+                      .team-member-links-list
+                        %a.facebook.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-facebook
+                        %a.twitter.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-twitter
+                        %a.linkedin.team-member-links-item{:href => "#", :target => "_blank"}
+                          %i.fa.fa-linkedin
+                        %p
+                          Lorem ipsum dolor sit amet, quis adipiscing elit.
+                  .team-member-meta
+                    %h4.team-member-name Atiar Rahman
+                    .team-member-role
+                      CTO
+          / End
+        / /Team members row 1
+    / /Agency team
+    / Fun Facts
+    .fun-wrap.image-parallax
+      .texture-layer
+        .container
+          / Title row
+          .row
+            .col-md-12.big-title.light.wow.bounceIn
+              %h2 Nuestros n&uacute;meros
+          / /Title row
+          .row
+            .col-md-3.wow.fadeInLeft
+              .fun-box
+                %i.fa.fa-clock-o
+                %span.fun{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "336"}
+                %p Horas de trabajo
+            .col-md-3.wow.fadeInDown
+              .fun-box
+                %i.fa.fa-users
+                %span.fun{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "21"}
+                %p Clientes satisfechos
+            .col-md-3.wow.fadeInDown
+              .fun-box
+                %i.fa.fa-check
+                %span.fun{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "68"}
+                %p Cuentas registradas
+            .col-md-3.wow.fadeInRight
+              .fun-box
+                %i.fa.fa-trophy
+                %span.fun{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "3"}
+                %p Reconocimientos
+    / /Fun Facts
+  / /Section 2
+  / Section 3
+  -#
+    %section#section3.portfolio
+      / Title row
+      .row
+        .col-md-12.big-title.wow.bounceIn
+          %h2 Portfolio
+        .clearfix
+        .col-md-12.sub-title.text-center.wow.slideInRight
+          %h3 More people will pay you money to help them achieve a monetary goal than will pay you to give them something pretty to look at!
+      / /Title row
+      / Portfolio Filters
+      #filters.wow.fadeInLeft
+        %ul.clearfix
+          %li
+            %a#all.active{"data-filter" => "*", :href => "#"}
+              %h5 All
+          %li
+            %a{"data-filter" => ".wordpress", :href => "#"}
+              %h5 Wordpress
+          %li
+            %a{"data-filter" => ".jquery", :href => "#"}
+              %h5 jQuery
+          %li
+            %a{"data-filter" => ".php", :href => "#"}
+              %h5 PHP
+          %li
+            %a{"data-filter" => ".css", :href => "#"}
+              %h5 CSS
+          %li
+            %a{"data-filter" => ".html", :href => "#"}
+              %h5 HTML
+      / /Portfolio Filters
+      / Portfolio Wrap
+      #portfolio-wrap
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.wordpress.html.css
+          .img-holder
+            = image_tag('portfolio/portfolio2.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio2.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.php.jquery
+          .img-holder
+            = image_tag('portfolio/portfolio3.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio3.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.wordpress.css.html
+          .img-holder
+            = image_tag('portfolio/portfolio4.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio4.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.branding.jquery
+          .img-holder
+            = image_tag('portfolio/portfolio5.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio5.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.php.html.css
+          .img-holder
+            = image_tag('portfolio/portfolio6.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio6.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.wordpress.jquery
+          .img-holder
+            = image_tag('portfolio/portfolio7.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio7.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.css.php.html.jquery
+          .img-holder
+            = image_tag('portfolio/portfolio8.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio8.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+        / Portfolio Item With PrettyPhoto
+        .portfolio-item.one-four.wordpress.php.css
+          .img-holder
+            = image_tag('portfolio/portfolio1.jpg', class: 'img-responsive')
+            .img-overlay
+            .overlay-effect
+              %span.RoundBg
+                %a{"data-gal" => "prettyPhoto[galname]", :href => "img/portfolio/portfolio1.jpg"}
+                  %i.fa.fa-search
+              %span.RoundBg
+                %a{:href => ""}
+                  %i.fa.fa-link
+        / /Portfolio Item With PrettyPhoto
+      / /Portfolio Wrap
+  / /Section 3
+  / Section 4
+  %section#section4.services
+    .service-wrap
+      .container
+        / Title row
+        .row
+          .col-md-12.big-title.wow.bounceIn
+            %h2 Servicios
+          .clearfix
+          .col-md-12.sub-title.text-center.wow.slideInRight
+            %h3 Cumplimos las metas de su proyecto con una soluci&oacute;n de &uacute;ltima generaci&oacute;n.
+        / /Title row
+        / Service row 1
+        .row
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-arrows-alt
+              .service-box-content
+                %h4 Dise&ntilde;o responsivo
+                %p
+                  Puede ser visto desde cualquier dispositivo web.
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-eye
+              .service-box-content
+                %h4 Retina Ready
+                %p
+                  Soporte a las pantallas de alta densidad.
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-edit
+              .service-box-content
+                %h4 Elementos enriquecidos
+                %p
+                  Digale adios a los aburridos formularios web.
+        / Service row 1
+        / Service row 2
+        .row
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-leaf
+              .service-box-content
+                %h4 Dise&ntilde;o &uacute;nico
+                %p
+                  Y amigable con los usuarios.
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-cog
+              .service-box-content
+                %h4 Nuevo enfoque
+                %p
+                  Resuelva sus procesos de una forma m&aacute;s eficiente.
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-search
+              .service-box-content
+                %h4 B&uacute;squedas
+                %p
+                  Encuentre lo que busca, r&aacute;pido y f&aacute;cil.
+        / Service row 2
+        / Service row 3
+        .row
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-rocket
+              .service-box-content
+                %h4 Calidad profesional
+                %p
+                  Hecho por y para profesionales m&eacute;dicos.
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-code
+              .service-box-content
+                %h4 HTMl5
+                %p
+                  &iexcl;P&aacute;ginas increibles y optimizadas!
+          .col-lg-4.col-md-4.col-sm-4.col-xs-12.wow.fadeIn
+            .service-box
+              .service-icon
+                %i.fa.fa-clock-o
+              .service-box-content
+                %h4 Ahorre tiempo
+                %p
+                  Y dinero, simplemente reduciendo el tiempo de sus procesos.
+        / Service row 3
+  / /Section 4
+  / Section 5
+  %section#section5.clients
+    .testimonial-wrap.image-parallax
+      .texture-layer
+        .container
+          / Title row
+          .row
+            .col-md-12.big-title.light.wow.bounceIn
+              %h2 Testimoniales
+            .clearfix
+            .col-md-12.sub-title.text-center.light.wow.slideInRight
+              %h3 &iexcl;Qu&eacute; esperas para unirte a ellos!
+          / /Title row
+          / Testimonial row
+          .row
+            .testimonials
+              .col-md-1
+                .carousel-controls
+                  %a.prev{"data-slide" => "prev", :href => "#testimonials-carousel"}
+                    %i.fa.fa-angle-left
+              .col-md-10
+                #testimonials-carousel.testimonials-carousel.carousel.slide
+                  .carousel-inner
+                    .item.active
+                      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                        .testimonial.item
+                          %p
+                            Desde que empece a usar este sistema he dicho &iexcl;adios al desorden!
+                          .testimonials-arrow
+                          .author
+                            .testimonial-image
+                              = image_tag('testimonial/team-member-1.jpg', class: 'img-responsive')
+                            .testimonial-author-info
+                              %a{:href => "#"}
+                                %span.color Juan Perez
+                              Director General
+                    .item
+                      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                        .testimonial.item
+                          %p
+                            Al principio tuve mis dudas, pero mis compa&ntilde;eros me insistieron en probarlo, ahora ya no se que har&iacute;a sin este sistema.
+                          .testimonials-arrow
+                          .author
+                            .testimonial-image
+                              = image_tag('testimonial/team-member-2.jpg')
+                            .testimonial-author-info
+                              %a{:href => "#"}
+                                %span.color Roxana Aguilar
+                              Presidenta Ejecutiva
+                    .item
+                      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                        .testimonial.item
+                          %p
+                            Optamos por darle un par de meses de gracia, hoy ya llevamos 10 meses de usarlo y &iexcl;seguimos contando!.
+                          .testimonials-arrow
+                          .author
+                            .testimonial-image
+                              = image_tag('testimonial/team-member-3.jpg')
+                            .testimonial-author-info
+                              %a{:href => "#"}
+                                %span.color Roberto R.
+                              Jefe enfermer&iacute;a
+              .col-md-1
+                .carousel-controls.pull-right
+                  %a.next{"data-slide" => "next", :href => "#testimonials-carousel"}
+                    %i.fa.fa-angle-right
+          / /Testimonial row
+  / /Section 5
+  / Section 6
+  %section#section6.pricing
+    .container
+      .row.flat
+        / Title row
+        .row
+          .col-md-12.big-title.wow.bounceIn
+            %h2 Nuestros precios
+          .clearfix
+          .col-md-12.sub-title.text-center.wow.slideInRight
+            %h3 &iexcl;Paga lo que quieras usar!
+        / /Title row
+        .row
+          .col-lg-3.col-md-3.col-sm-6.col-xs-12.wow.fadeInLeft
+            %ul.plan.plan1
+              %li.plan-name
+                Cuenta b&aacute;sica
+              %li.plan-price
+                %strong $5
+                \/ mensual
+              %li
+                %strong ∞
+                almacenamiento
+              %li
+                %strong ∞
+                pacientes
+              -#
+                %li.plan-action
+                  %a.btn.btn-2.btn-2c{:href => "#"} Signup
+          .col-lg-3.col-md-3.col-sm-6.col-xs-12
+            %ul.plan.plan2.featured
+              %li.plan-name
+                Contrato b&aacute;sico
+              %li.plan-price
+                %strong $39.99
+                \/ pago &uacute;nico
+              %li
+                %strong 1
+                cuenta administrador
+              %li
+                %strong 1
+                cuenta b&aacute;sica
+              %li
+                %strong soporte
+                t&eacute;lefono y correo
+              -#
+                %li.plan-action
+                  %a.btn.btn-2.btn-2c{:href => "#"} Signup
+          .col-lg-3.col-md-3.col-sm-6.col-xs-12.wow.fadeInDown
+            %ul.plan.plan3
+              %li.plan-name
+                Cuenta administrador
+              %li.plan-price
+                %strong $5
+                \/ mensual
+          .col-lg-3.col-md-3.col-sm-6.col-xs-12.wow.fadeInRight
+            %ul.plan.plan4
+              %li.plan-name
+                Instalaci&oacute;n propia
+              %li.plan-price
+                &iexcl;Llame y preguntenos!
+  / /Section 6
+  / Section 7
+  %section#section7.contacts
+    / /Subscription Wrap
+    / Contact form
+    .contact-form
+      .container
+        / Title row
+        .row
+          .col-md-12.big-title.wow.bounceIn
+            %h2 Cont&aacute;ctanos
+          .clearfix
+          .col-md-12.sub-title.text-center.wow.slideInRight
+            %h3 Contacta con nosotros para aprender m&aacute;s de lo que hacemos
+        / /Title row
+        / Form element row
+        .row.text-center
+          .col-md-2
+          .col-md-8
+            %form#contact.reply{:method => "post"}
+              %fieldset
+                .row
+                  .col-lg-6.col-md-6.col-sm-6.col-xs-12.wow.fadeInLeft
+                    .row
+                      .col-md-12
+                        %input#name.form-control{:name => "name", :placeholder => "Nombre", :required => "", :type => "text", :value => ""}/
+                      .col-md-12
+                        %input#email.form-control{:name => "email", :placeholder => "Correo electrónico", :required => "", :type => "email", :value => ""}/
+                        %input#subject.form-control{:name => "subject", :placeholder => "Asunto", :required => "", :type => "text", :value => ""}/
+                      .col-md-12
+                  .col-lg-6.col-md-6.col-sm-6.col-xs-12.wow.fadeInRight
+                    .row
+                      .col-md-12
+                        %textarea#text.form-control{:cols => "40", :name => "text", :placeholder => "Comentario", :required => "", :rows => "3"}
+                .row
+                  .col-md-12.wow.fadeInUp
+                    %button.btn.btn-2.btn-2c{:type => "submit"} Env&iacute;ar
+                    .success.alert-success.alert{:style => "display:none"} Tu mensaje ha sido enviado satisfactoriamente.
+                    .error.alert-danger.alert{:style => "display:none"} E-mail must be valid and message must be longer than 100 characters.
+                    .error.alert-danger.alert{:style => "display:none"} Correo electr&oacute;nico inv&aacute;lido.
+          .col-md-2
+        / /Form element row
+    / /Contact form
+    / Google Map
+    .map-wrap
+      .wow.fadeInUp
+        #maps.google-maps
+    / /Google Map
+    %footer.footer-wrap.text-center
+      .container
+        %ul.social.social-icons-footer-bottom.wow.fadeInDown
+          %li.facebook
+            %a{"data-toggle" => "tooltip", :href => "#", :title => "Facebook"}
+              %i.fa.fa-facebook
+          %li.twitter
+            %a{"data-toggle" => "tooltip", :href => "#", :title => "Twitter"}
+              %i.fa.fa-twitter
+          %li.dribbble
+            %a{"data-toggle" => "tooltip", :href => "#", :title => "Dribble"}
+              %i.fa.fa-dribbble
+          %li.linkedin
+            %a{"data-toggle" => "tooltip", :href => "#", :title => "LinkedIn"}
+              %i.fa.fa-linkedin
+          %li.rss
+            %a{"data-toggle" => "tooltip", :href => "#", :title => "Rss"}
+              %i.fa.fa-rss
+        %p.site-info.wow.fadeInUp © 2015 Expmedic
+  / /Section 7
+  / Scroll To Top
+  %a.scrollup{:href => "#"}
+    %i.fa.fa-angle-up
+/ /Warpper

@@ -1,0 +1,51 @@
+.form-group
+  = f.label :clinic_id, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.collection_select(:clinic_id, Clinic.accessible_by(current_ability).order(:name), :id, :name, {}, {class: 'form-control'})
+
+.form-group
+  = f.label :username, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :username, class: 'form-control', required: true
+    %i.help_block
+      Requerido, el nombre de usuario debe ser único en el sistema
+
+.form-group
+  = f.label :email, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :email, class: 'form-control', required: true
+    %i.help_block
+      Requerido, el correo electrónico debe ser único en el sistema
+
+.form-group
+  = f.label :firstname, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :firstname, class: 'form-control', required: true
+    %i.help_block
+      Requerido
+
+.form-group
+  = f.label :lastname, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.text_field :lastname, class: 'form-control tokenize'
+
+- if can? :destroy, f.object or f.object.new_record?
+  .form-group
+    = f.label :role, class: 'control-label col-xs-3'
+    .col-xs-7
+      - if current_admin.try(:role)=='manager'
+        = f.select :role, options_for_select(Admin::ROLE.except('manager').invert), {}, class: 'form-control'
+      - else
+        = f.select :role, options_for_select(Admin::ROLE.invert), {}, class: 'form-control'
+
+.form-group
+  = f.label :password, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.password_field :password, class: 'form-control'
+    %i.help_block
+      La contraseña debe tener al menos 8 carácteres.
+
+.form-group
+  = f.label :password_confirmation, class: 'control-label col-xs-3'
+  .col-xs-7
+    = f.password_field :password_confirmation, class: 'form-control'

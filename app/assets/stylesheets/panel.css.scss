@@ -1,0 +1,185 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'theme/bootstrap';
+@import 'theme/font-awesome';
+@import 'theme/font-awesome-ie7';
+@import 'theme/datepicker';
+@import 'theme/main';
+@import 'theme/animate';
+@import 'theme/daterange';
+@import 'theme/fullcalendar';
+@import 'theme/slidebars';
+@import 'bootstrap-tokenfield';
+
+.top-bar {
+  .logo {
+    margin-top: 10px;
+  }
+}
+
+.alert {
+  margin-top: 1.5em;
+}
+
+.data-table {
+  div {
+    white-space: nowrap;
+  }
+}
+
+.show {
+  blockquote {
+    font-size: 1.2em;
+  }
+}
+
+.dataTables_filter {
+  label {
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  input {
+    margin: 0 0 0 1em;
+    padding: 6px 12px;
+  }
+}
+
+form {
+  .img-preview {
+    height: 34px;
+  }
+
+  .datetime-control {
+    display: inline-block;
+    width: 100px;
+  }
+
+  legend {
+    padding: 0.5em 0;
+  }
+
+  .form-group {
+    margin-bottom: 6px;
+  }
+
+  input[type=text],
+  input[type=date],
+  select {
+    &.form-control {
+      height: 28px;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  input[type=submit] {
+    margin-top: 15px;
+  }
+
+  &.form-inline {
+    input[type=submit] {
+      margin-top: 0;
+    }
+  }
+
+  .fields {
+    padding: 15px 0;
+
+    &:nth-child(odd) {
+      background: #f2f2f2;
+    }
+  }
+
+  .add_nested_fields {
+    margin-top: 15px;
+  }
+}
+
+#score-details {
+  font-weight: bold;
+
+  .header,
+  .footer {
+    background: #eee;
+    border: 1px #ccc solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-transform: uppercase;
+  }
+
+  .date {
+    border-bottom: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    &:nth-child(odd) {
+      background: #f2f2f2;
+    }
+    &:nth-child(even) {
+      background: #fff;
+    }
+  }
+
+  .token {
+    border-bottom: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    &:nth-child(odd) {
+      background: #fff;
+    }
+    &:nth-child(even) {
+      background: #f2f2f2;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .lives {
+    border-bottom: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    &:nth-child(odd) {
+      background: #fff;
+    }
+    &:nth-child(even) {
+      background: #f2f2f2;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .not-used {
+    color: #a00;
+    cursor: help;
+  }
+}
+
+.pagination {
+  float: right;
+
+  a,
+  span,
+  .current {
+    border: 1px rgba(0, 0, 0, 0.3) solid;
+    font: normal 12px 'Open Sans', arial, sans-serif;
+    line-height: 18px;
+    margin: 1px;
+    padding: 5px 10px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &.disabled {
+      background: #eee;
+    }
+  }
+
+  .current {
+    background: #1e91cf;
+    color: #fff;
+  }
+}

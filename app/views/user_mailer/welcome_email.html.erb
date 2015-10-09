@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bienvenido a expmedic.com!</h1>
+    <p>
+      Su clínica "<%= @clinic.name %>" ha sido registrada satisfactoriamente en ExpMedic.com.
+      A continuación se detallan sus datos de acceso:<br>
+    </p>
+    <p>
+      <strong>Nombre de usuario: </strong><%= "admin-#{@clinic.acronym}" %>
+      <br>
+      <strong>Contraseña: </strong><%= @generated_password %>
+    </p>
+    <p>
+      Para acceder al sitio, sigue el siguiente enlace: <a href="http://www.expmedic.com/panel">ExpMedic.com</a>.
+    </p>
+    <p>Gracias por confiar en nosotros, pase un feliz día!</p>
+    <p>Atte. Equipo ExpMedic</p>
+  </body>
+</html>

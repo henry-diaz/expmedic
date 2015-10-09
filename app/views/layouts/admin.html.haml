@@ -1,0 +1,30 @@
+!!! 5
+%html
+  %head
+    %title Panel de control | ExpMedic
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
+
+    %link{ href: image_path('favicon.png'), sizes: '128x128', rel: 'shortcut icon' }
+    %link{ href: image_path('favicon.png'), sizes: '128x128', rel: 'apple-touch-icon' }
+    %link{ href: image_path('favicon.png'), sizes: '128x128', rel: 'apple-touch-icon-precomposed' }
+
+    = stylesheet_link_tag 'panel'
+    = javascript_include_tag 'panel'
+    = csrf_meta_tags
+  %body.animated.fadeInDown
+    .top-bar
+
+      = link_to panel_root_url, class: 'logo' do
+        = image_tag 'panel/logo.png', class: 'img-responsive'
+
+      = render partial: 'layouts/panel/top_menu'
+
+    = render partial: 'layouts/panel/left_bar'
+
+    .dashboard-wrapper
+      .container
+        = render partial: 'layouts/panel/breadcrumb' rescue nil
+        %hr
+        = render partial: 'layouts/panel/notice' rescue nil
+        = yield
